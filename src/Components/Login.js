@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "fireb
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BgUrl } from "../utils/constants";
 // import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -74,7 +75,7 @@ const Login = () => {
         <div >
             <Header />
             <div className="absolute -z-100" >
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/IN-en-20250721-TRIFECTA-perspective_cadc8408-df6e-4313-a05d-daa9dcac139f_small.jpg" alt="img" />
+                <img src={BgUrl} alt="bg img" />
             </div>
             <form onSubmit={(e) => {
                 e.preventDefault()

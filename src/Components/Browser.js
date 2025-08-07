@@ -6,8 +6,11 @@ import SecondaryContainer from "./SecondaryContainer";
 import useNowPlaying from "../hooks/useNowPlaying";
 import usePopular from "../hooks/usePopular";
 import useToprate from "../hooks/useToprate";
+import { useSelector } from "react-redux";
+import GptSearchPage from "./GptSearchPage";
 
-const Browser=()=>{
+const Browser = () => {
+    const gptPage = useSelector((store) => store.gpt.showGpt);
     useNowPlaying()
     usePopular()
     useToprate()
@@ -15,10 +18,16 @@ const Browser=()=>{
 
     return (
         <div>
-            <Header/>
-            <MainContainer />
-            <SecondaryContainer/>
-            
+            <Header />
+            {
+                gptPage === true ? <GptSearchPage /> :
+                    <>
+                        <MainContainer />
+                        <SecondaryContainer />
+                    </>
+            }
+
+
         </div>
     )
 };
