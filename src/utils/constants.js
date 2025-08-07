@@ -5,3 +5,6 @@ export const BgUrl="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-428
 export const supportedLanguage=[{idetifier:"en",name:"English"},
     {idetifier:"hindi",name:"hindi"}
 ]
+
+export const OPENAI_API_KEY =process.env.REACT_APP_OPENAI_API_KEY;
+
